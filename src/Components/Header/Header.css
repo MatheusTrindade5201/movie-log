@@ -1,0 +1,19 @@
+.header__logo {
+    background-image: url('/public/assets/images/logo.svg');
+    background-repeat: no-repeat;
+    background-size: 10rem;
+    display: inline-block;
+    height: 50px;
+    width: 140px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5vw;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.header__theme {
+    font-weight: 600;
+}
