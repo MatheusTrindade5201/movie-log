@@ -1,9 +1,9 @@
 import './SearchInput.css'
 
-const CampoPesquisa = (props) => {
+const SearchInput = (props) => {
     return (
-        <input placeholder={props.placeholder} className='searchInput' />
+        <input placeholder={props.placeholder} className='searchInput'/>
     )
 }
 
-export default CampoPesquisa
+export default SearchInput
