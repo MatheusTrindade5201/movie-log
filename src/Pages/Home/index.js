@@ -10,7 +10,9 @@ const Home = () => {
             <div className='search__section'>
                 <SearchInput placeholder={'Search for a movie'}/>
             </div>
+            <div className='movies__section'>
             </div>
+        </div>
     )
 }
 
