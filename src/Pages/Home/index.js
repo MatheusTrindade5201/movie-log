@@ -25,8 +25,9 @@ const Home = () => {
     }
 
     useEffect(() => {
-        // getTopRated();
-    },[])
+        getTopRated();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[filter])
 
     if(topRated === false){
         return (
@@ -45,9 +46,9 @@ const Home = () => {
                      changeFilter={value => setFilter(value)}
                      text={'Top Rated'} />
                     <FilterButton
-                     btnValue={'latest'}
+                     btnValue={'now_playing'}
                      changeFilter={value => setFilter(value)}
-                     text={'Latest'} />
+                     text={'Now Playing'} />
                     <FilterButton
                      btnValue={'upcoming'}
                      changeFilter={value => setFilter(value)}
@@ -62,14 +63,32 @@ const Home = () => {
                 <div className='search__section'>
                     <SearchInput placeholder={'Search for a movie'}/>
                 </div>
-                {/* <div className='movies__section'>
+                <div className='filters'>
+                    <FilterButton
+                     btnValue={'popular'}
+                     changeFilter={value => setFilter(value)}
+                     text={'Popular'} />
+                    <FilterButton
+                     btnValue={'top_rated'}
+                     changeFilter={value => setFilter(value)}
+                     text={'Top Rated'} />
+                    <FilterButton
+                     btnValue={'now_playing'}
+                     changeFilter={value => setFilter(value)}
+                     text={'Now Playing'} />
+                    <FilterButton
+                     btnValue={'upcoming'}
+                     changeFilter={value => setFilter(value)}
+                     text={'Upcoming'} />
+                </div>
+                <div className='movies__section'>
                     {topRated.map(movie => <Card 
                     image={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-                    name={movie.original_title}
+                    name={movie.title}
                     release={movie.release_date}
                     rating={movie.vote_average}
                     />)}
-                </div> */}
+                </div>
             </div>
         )
     }
