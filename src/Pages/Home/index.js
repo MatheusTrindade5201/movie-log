@@ -60,22 +60,26 @@ const Home = () => {
                     <FilterButton
                      btnValue={'popular'}
                      changeFilter={value => {setFilter(value);
-                    setPage(1)}}
+                    setPage(1);
+                    setSearch('') }}
                      text={'Popular'} />
                     <FilterButton
                      btnValue={'top_rated'}
                      changeFilter={value => {setFilter(value);
-                    setPage(1)}}
+                    setPage(1);
+                    setSearch('') }}
                      text={'Top Rated'} />
                     <FilterButton
                      btnValue={'now_playing'}
                      changeFilter={value => {setFilter(value);
-                    setPage(1)}}
+                    setPage(1);
+                    setSearch('') }}
                      text={'Now Playing'} />
                     <FilterButton
                      btnValue={'upcoming'}
                      changeFilter={value => {setFilter(value);
-                    setPage(1)}}
+                    setPage(1);
+                    setSearch('') }}
                      text={'Upcoming'} />
                 </div>
             </div>
@@ -94,22 +98,26 @@ const Home = () => {
                     <FilterButton
                      btnValue={'popular'}
                      changeFilter={value => {setFilter(value);
-                        setPage(1)}}
+                        setPage(1);
+                        setSearch('') }}
                      text={'Popular'} />
                     <FilterButton
                      btnValue={'top_rated'}
                      changeFilter={value => {setFilter(value);
-                        setPage(1)}}
+                        setPage(1);
+                        setSearch('') }}
                          text={'Top Rated'} />
                     <FilterButton
                      btnValue={'now_playing'}
                      changeFilter={value => {setFilter(value);
-                        setPage(1)}}
+                        setPage(1);
+                        setSearch('') }}
                          text={'Now Playing'} />
                     <FilterButton
                      btnValue={'upcoming'}
                      changeFilter={value => {setFilter(value);
-                        setPage(1)}}
+                        setPage(1);
+                        setSearch('') }}
                          text={'Upcoming'} />
                 </div>
                 <div className='movies__section'>
