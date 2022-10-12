@@ -7,7 +7,7 @@ const Card = (props) => {
                 <h2 className='card__name'>{props.name}</h2>
             </div>
             <div className='card__description'>
-                <p className='card__iten'><strong>Realease date:</strong>{props.release}</p>
+                <p className='card__iten'><strong>Realease date:</strong>{props.release.substr(0, 4)}</p>
                 <p className='card__iten'><strong>Rating</strong>{props.rating}</p>
             </div>
         </div>

@@ -7,7 +7,7 @@ import FilterButton from '../../Components/FilterButton'
 import Pagination from '../../Components/Pagination'
 
 const Home = () => {
-
+    const [search, setSearch] = useState('')
     const [topRated, setTopReated] = useState(false)
     const [filter, setFilter] = useState('popular')
     const [currentPage, setPage] = useState(1)
@@ -15,30 +15,46 @@ const Home = () => {
 
     const urlBase = process.env.REACT_APP_URL_BASE
     const apiKey = process.env.REACT_APP_API_KEY
+    const searchUrl = process.env.REACT_APP_SEARCH_URL
 
     const getTopRated = async () => {
-        try {
-            const data = await fetch(`${urlBase}${filter}?api_key=${apiKey}&page=${currentPage}`);
-            const json = await data.json();
-            console.log(json);
-            setTopReated(json.results);
-            setTotalPages(json.total_pages)
-        } catch (error) {
-            console.log(error.message);
+        if(search.length === 0){
+            try {
+                const data = await fetch(`${urlBase}${filter}?api_key=${apiKey}&page=${currentPage}`);
+                const json = await data.json();
+                console.log(json);
+                setTopReated(json.results);
+                setTotalPages(json.total_pages)
+            } catch (error) {
+                console.log(error.message);
+            }
+        }else{
+            try {
+                const data = await fetch(`${searchUrl}?api_key=${apiKey}&query=${search}&page=${currentPage}`);
+                const json = await data.json();
+                console.log(json);
+                setTopReated(json.results);
+                setTotalPages(json.total_pages)
+            } catch (error) {
+                console.log(error.message);
+            }
         }
     }
 
     useEffect(() => {
         getTopRated();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[filter, currentPage])
+    },[filter, currentPage, search])
 
     if(topRated === false){
         return (
             <div>
                 <Header />
                 <div className='search__section'>
-                    <SearchInput placeholder={'Search for a movie'}/>
+                    <SearchInput
+                     placeholder={'Search for a movie'}
+                     value={search}
+                     onTyping={valor => setSearch(valor)} />
                 </div>
                 <div className='filters'>
                     <FilterButton
@@ -69,7 +85,10 @@ const Home = () => {
             <div>
                 <Header />
                 <div className='search__section'>
-                    <SearchInput placeholder={'Search for a movie'}/>
+                    <SearchInput
+                     placeholder={'Search for a movie'}
+                     value={search}
+                     onTyping={valor => setSearch(valor)} />
                 </div>
                 <div className='filters'>
                     <FilterButton
