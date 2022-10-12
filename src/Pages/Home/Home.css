@@ -31,7 +31,9 @@
 }
 
 .filters {
-    padding: 1rem 0;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 5vw;
     border-bottom: solid 2px #a7a4a4;
 }
 

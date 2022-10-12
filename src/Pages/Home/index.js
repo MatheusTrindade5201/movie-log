@@ -8,7 +8,7 @@ import Pagination from '../../Components/Pagination'
 
 const Home = () => {
     const [search, setSearch] = useState('')
-    const [topRated, setTopReated] = useState(false)
+    const [movies, setMovies] = useState(false)
     const [filter, setFilter] = useState('popular')
     const [currentPage, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
@@ -17,13 +17,13 @@ const Home = () => {
     const apiKey = process.env.REACT_APP_API_KEY
     const searchUrl = process.env.REACT_APP_SEARCH_URL
 
-    const getTopRated = async () => {
+    const getMovies = async () => {
         if(search.length === 0){
             try {
                 const data = await fetch(`${urlBase}${filter}?api_key=${apiKey}&page=${currentPage}`);
                 const json = await data.json();
                 console.log(json);
-                setTopReated(json.results);
+                setMovies(json.results);
                 setTotalPages(json.total_pages)
             } catch (error) {
                 console.log(error.message);
@@ -33,7 +33,7 @@ const Home = () => {
                 const data = await fetch(`${searchUrl}?api_key=${apiKey}&query=${search}&page=${currentPage}`);
                 const json = await data.json();
                 console.log(json);
-                setTopReated(json.results);
+                setMovies(json.results);
                 setTotalPages(json.total_pages)
             } catch (error) {
                 console.log(error.message);
@@ -42,11 +42,11 @@ const Home = () => {
     }
 
     useEffect(() => {
-        getTopRated();
+        getMovies();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[filter, currentPage, search])
 
-    if(topRated === false){
+    if(movies === false){
         return (
             <div>
                 <Header />
@@ -121,7 +121,8 @@ const Home = () => {
                          text={'Upcoming'} />
                 </div>
                 <div className='movies__section'>
-                    {topRated.map(movie => <Card 
+                    {movies.map(movie => <Card 
+                    id={movie.id}
                     key={movie.id}
                     image={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                     name={movie.title}
