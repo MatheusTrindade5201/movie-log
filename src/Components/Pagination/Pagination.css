@@ -1,0 +1,17 @@
+.pagination {
+    padding: 1rem 0;
+    width: 10rem;
+    font-size: 1.2rem;
+    background-color: #60bf15;
+    color: white;
+    border: 2px solid white;
+    outline-color: black;
+    outline-style: solid;
+    outline-width: 2px;
+    transition: .3s;
+}
+
+.pagination:hover {
+    cursor: pointer;
+    background-color: #9ced5e;
+}
