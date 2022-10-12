@@ -1,6 +1,4 @@
 .return__button {
-    margin: 1.5rem 0 0 5vw;
-    position: absolute;
     padding: .5rem 1.5rem;
     background-color: #60bf15;
     outline: 1px solid #807d7d;
@@ -13,7 +11,15 @@
     text-decoration: none;
 }
 
+.return {
+    margin: 2rem 5vw 2.5rem 5vw;
+}
+
 .return__button:hover {
     background-color: #9ced5e;
     cursor: pointer;
+}
+
+.movie {
+    margin: 0 5vw;
 }
