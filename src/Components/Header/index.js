@@ -1,9 +1,13 @@
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className='header'>
             <span className='header__logo'></span>
+            <div className='header__user'>
+                {props.login}
+                {props.register}
+            </div>
             <p className='header__theme'>Dark Mode</p>
         </header>
     )

@@ -5,6 +5,7 @@ import Card from '../../Components/Card'
 import { useEffect, useState } from 'react'
 import FilterButton from '../../Components/FilterButton'
 import Pagination from '../../Components/Pagination'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
     const [search, setSearch] = useState('')
@@ -49,7 +50,10 @@ const Home = () => {
     if(movies === false){
         return (
             <div>
-                <Header />
+                <Header 
+                login={<NavLink className='header__login' to={'/Login'}>Login</NavLink> } 
+                register={<NavLink className='header__register' to={'/Register'}>Sign Up</NavLink> } 
+                />
                 <div className='search__section'>
                     <SearchInput
                      placeholder={'Search for a movie'}
@@ -87,7 +91,10 @@ const Home = () => {
     }else {
         return (
             <div>
-                <Header />
+                <Header 
+                login={<NavLink className='header__login' to={'/Login'}>Login</NavLink> } 
+                register={<NavLink className='header__register' to={'/Register'}>Sign Up</NavLink> } 
+                />
                 <div className='search__section'>
                     <SearchInput
                      placeholder={'Search for a movie'}
