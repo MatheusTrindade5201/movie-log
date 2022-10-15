@@ -5,15 +5,13 @@ const Form = (props) => {
     return (
         <form className='form'>
             <h1 className='form__title'>{props.form_type}</h1>
-            <div className='form__input'>
-                <label className='form__label'>Email:</label>
-                <input className='form__input-field' placeholder='Type your email' />
-            </div>
-            <div className='form__input'>
-                <label className='form__label'>Password:</label>
-                <input className='form__input-field' placeholder='type your password' type={'password'} />
-            </div>
-            <button className='form__button'>{props.action}</button>
+            <label className='form__label'>Email:
+                <input onChange={event => props.typingEmail(event.target.value)} className='form__input-field' placeholder='Type your email' />
+            </label>
+            <label className='form__label'>Password:
+                <input onChange={event => props.typingPassword(event.target.value)} className='form__input-field' placeholder='Type your password' type={'password'} />
+            </label>
+            <button type='submit' onClick={props.button_function} className='form__button'>{props.action}</button>
             <NavLink className={'form__route'} to={props.route}>{props.route_text}</NavLink>
         </form>
     )
