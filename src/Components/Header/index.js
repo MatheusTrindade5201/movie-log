@@ -7,6 +7,7 @@ const Header = (props) => {
             <div className='header__user'>
                 {props.login}
                 {props.register}
+                {props.myList}
             </div>
             <p className='header__theme'>Dark Mode</p>
         </header>

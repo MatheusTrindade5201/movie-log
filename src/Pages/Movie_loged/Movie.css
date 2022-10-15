@@ -1,0 +1,25 @@
+.return__button {
+    padding: .5rem 1.5rem;
+    background-color: #60bf15;
+    outline: 1px solid #807d7d;
+    border-radius: 4px;
+    transition: .3s;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+.return {
+    margin: 2rem 5vw 2.5rem 5vw;
+}
+
+.return__button:hover {
+    background-color: #9ced5e;
+    cursor: pointer;
+}
+
+.movie {
+    margin: 0 5vw;
+}
