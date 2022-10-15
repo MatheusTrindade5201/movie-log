@@ -10,16 +10,17 @@
 .card {
     border: 1.5px solid black;
     border-radius: 12px;
-    background-color:#E5E5E5;
+    /* background-color:rgb(0, 0, 0, .85); */
     width: 250px;
-    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.75); 
+    box-shadow: 4px 4px 4px 0px rgba(115, 115, 115,0.75); 
     overflow: hidden;
     text-decoration: none;
-    color: black;
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0,0.2),rgb(0, 0, 0, .85));
 }
 
 .card__name {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
     color: white;
     width: 100%;
     padding: .3rem;
