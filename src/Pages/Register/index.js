@@ -22,17 +22,32 @@ const Register = () => {
     }
     if (error) {
         return (
-          <div>
-            <p>Error: {error.message}</p>
-          </div>
+        <div className='form__page'>
+        <Header />
+        <div className='return'>
+            <NavLink className='return__button' to={'/'} >Return</NavLink>
+        </div>
+            <Form 
+            form_type={'Sign Up'}
+            action={'Sign Up'}
+            route={'/Login'}
+            route_text={'I am already registered'}
+            typingEmail={email => setEmail(email)}
+            typingPassword={pass => setPassword(pass)}
+            button_function={signUp}
+            error={<h1 className='user__message-error'>Error: {error.message}</h1>}
+            ></Form>
+        </div>
         );
       }
       if (loading) {
         return (
-          <div className='user__message'>
-            <Header />
-            <h1 className='user__message-text'>Loading</h1>
-          </div>
+            <div>
+                <Header />
+                <div className='user__message'>
+                <h1 className='user__message-text'>Loading</h1>
+                </div>
+            </div>
         );
       }
       if (user) {
