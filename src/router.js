@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Home_loged from "./Pages/Home-loged";
+import HomeLoged from "./Pages/HomeLoged";
 import Login from "./Pages/Login";
 import Movie from "./Pages/Movie";
-import Movie_loged from "./Pages/Movie_loged";
+import MovieLoged from "./Pages/MovieLoged";
 import Register from "./Pages/Register";
 
 const Router = () => {
@@ -14,8 +14,8 @@ const Router = () => {
         return (
             <BrowserRouter>
                 <Routes>
-                    <Route element={<Home_loged />} path='/' />
-                    <Route element={<Movie_loged />} path='movie/:id'/> 
+                    <Route element={<HomeLoged />} path='/' />
+                    <Route element={<MovieLoged />} path='movie/:id'/> 
                     <Route element={<Register />} path='/register'/>
                     <Route element={<Login />} path='/Login' />
                 </Routes>
