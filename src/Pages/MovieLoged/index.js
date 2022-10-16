@@ -4,7 +4,7 @@ import Details from '../../Components/Details'
 import Header from '../../Components/Header'
 import './Movie.css'
 
-const Movie_loged = () => {
+const MovieLoged = () => {
 
     const [movie, setMovie] = useState(false)
 
@@ -61,4 +61,4 @@ if(movie === false){
 }
 }
 
-export default Movie_loged
+export default MovieLoged

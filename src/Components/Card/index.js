@@ -3,7 +3,7 @@ import './Card.css'
 
 const Card = (props) => {
     return (
-        <NavLink to={`movie/${props.id}`} className='card'>
+        <NavLink to={`/movie/${props.id}`} className='card'>
         <div className='card__presentation' style={{backgroundImage: `url(${props.image})`}}>
                 <h2 className='card__name'>{props.name}</h2>
             </div>

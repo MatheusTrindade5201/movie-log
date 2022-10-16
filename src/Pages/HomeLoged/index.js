@@ -2,17 +2,24 @@ import Header from '../../Components/Header'
 import './Home.css'
 import SearchInput from '../../Components/SearchInput'
 import Card from '../../Components/Card'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import FilterButton from '../../Components/FilterButton'
 import Pagination from '../../Components/Pagination'
 import { NavLink } from 'react-router-dom'
+import MyContext from '../../auth/MyContext'
 
-const Home_loged = () => {
+const HomeLoged = () => {
     const [search, setSearch] = useState('')
     const [movies, setMovies] = useState(false)
     const [filter, setFilter] = useState('popular')
     const [currentPage, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
+    const {setLogged} = useContext(MyContext);
+
+    const signOut = () => {
+        sessionStorage.removeItem('@AuthFirebase:user');
+        setLogged(false)
+    }
 
     const urlBase = process.env.REACT_APP_URL_BASE
     const apiKey = process.env.REACT_APP_API_KEY
@@ -46,12 +53,14 @@ const Home_loged = () => {
         getMovies();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[filter, currentPage, search])
+    
 
     if(movies === false){
         return (
             <div>
                 <Header 
                 myList={<NavLink className='header__myList' to={'/My-list'}>My List</NavLink> } 
+                signOut={<button onClick={signOut} className='header__login' >Sign Out</button>}
                 />
                 <div className='search__section'>
                     <SearchInput
@@ -92,6 +101,7 @@ const Home_loged = () => {
             <div>
                 <Header 
                 myList={<NavLink className='header__myList' to={'/My-list'}>My List</NavLink> } 
+                signOut={<button onClick={signOut} className='header__login' >Sign Out</button>}
                 />
                 <div className='search__section'>
                     <SearchInput
@@ -160,4 +170,4 @@ const Home_loged = () => {
     
 }
 
-export default Home_loged
+export default HomeLoged

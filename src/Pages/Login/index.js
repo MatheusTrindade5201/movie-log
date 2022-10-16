@@ -1,14 +1,17 @@
 import { getRedirectResult } from 'firebase/auth'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { render } from 'react-dom'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { NavLink, redirect } from 'react-router-dom'
+import { Navigate, NavLink, redirect } from 'react-router-dom'
 import { auth } from '../../auth/config'
+import MyContext from '../../auth/MyContext'
 import Form from '../../Components/Form'
 import Header from '../../Components/Header'
 import './Login.css'
 
 const Login = () => {
+
+    const {logged, setLogged} = useContext(MyContext)
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -54,13 +57,10 @@ const Login = () => {
       }
       if (user) {
         sessionStorage.setItem('@AuthFirebase:user', JSON.stringify(user))
+        setLogged(true)
         return (
             <div>
-              <Header />
-              <div className='user__message'>
-              <h1 className='user__message-text'>User loged with success!</h1>
-              <NavLink className='return__button' to={'/'}>Explore!</NavLink>
-              </div>
+              <Navigate to='/'/>
             </div>
           )
     }
