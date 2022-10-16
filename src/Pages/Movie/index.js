@@ -46,6 +46,7 @@ if(movie === false){
             </div>
             <div className='movie'>
                 <Details 
+                key={movie.title}
                 image ={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                 name = {movie.title}
                 rating={movie.vote_average}
@@ -53,6 +54,7 @@ if(movie === false){
                 language={movie.spoken_languages.length > 0 ? movie.spoken_languages[0].english_name : movie.original_language}
                 duration={movie.runtime}
                 overview={movie.overview}
+                bg={movie.backdrop_path}
                 genre={movie.genres.map(genre => <li className='genre'>{genre.name}</li>)}
                 />
             </div>

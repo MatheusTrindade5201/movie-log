@@ -18,6 +18,7 @@ const Details = (props) => {
                     </div>
                 </div>
             </div>
+            <div className='details__bg' style={{backgroundImage: `url(http://image.tmdb.org/t/p/w500/${props.bg})`}}></div>
             <h2 className='details__title'>Summary</h2> 
             <p className='infos__detail summary'>{props.overview}</p>
         </div>

@@ -4,6 +4,20 @@
     gap: 2rem;
 }
 
+.details__bg {
+    display: block;
+    position: absolute;
+    width: 95%;
+    height: 38%;
+    left: 2%;
+    top: 18%;
+    z-index: -1;
+    opacity: 0.3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .details__general {
     display: flex;
     gap: 1rem;
