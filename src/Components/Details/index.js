@@ -9,6 +9,7 @@ const Details = (props) => {
                     <div className='infos__header'>
                         <h2 className='details__title'>{props.name}</h2>
                         <p className='details__rating'>{props.rating.toFixed(1)}</p>
+                        {props.addMovie}
                     </div>
                     <div className='infos__detail'>
                         <p className='info'><strong>Release date: </strong>{props.release ? props.release.substr(0, 4) : props.release}</p>

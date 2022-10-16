@@ -57,3 +57,17 @@
     cursor: pointer;
     color: #60bf15;
 }
+
+.header__myList {
+    text-decoration: none;
+    font-weight: 800;
+    color: #000;
+    border: 1px solid rgb(165, 161, 161); 
+    padding: .5rem;
+    transition: .2s;
+}
+
+.header__myList:hover{
+    background-color: rgb(165, 161, 161);
+    color: #fff;
+}

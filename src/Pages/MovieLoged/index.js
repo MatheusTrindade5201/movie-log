@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { json, NavLink, useParams } from 'react-router-dom'
 import Details from '../../Components/Details'
 import Header from '../../Components/Header'
 import './Movie.css'
@@ -7,9 +7,27 @@ import './Movie.css'
 const MovieLoged = () => {
 
     const [movie, setMovie] = useState(false)
+    const [list, setList] = useState([])
+
 
     const urlBase = process.env.REACT_APP_URL_BASE
     const apiKey = process.env.REACT_APP_API_KEY
+
+    const addOnList = () => {
+        localStorage.setItem(movie.title, JSON.stringify(movie) )
+    }
+
+    const getList = () => {
+        if(localStorage.length > 0){
+        let list = []
+        for(let i = 0; i < localStorage.length; i++ ){
+            let key = localStorage.key(i)
+            let movie = JSON.parse(localStorage.getItem(key)) 
+            list.push(movie)
+        }
+        setList(list)
+        }
+    }
 
     const {id} = useParams();
 
@@ -26,6 +44,7 @@ const MovieLoged = () => {
 
 useEffect(() => {
     getMovie();
+    getList()
 },[])
 
 if(movie === false){
@@ -46,6 +65,7 @@ if(movie === false){
             </div>
             <div className='movie'>
                 <Details 
+                addMovie={<button className='header__myList' onClick={addOnList}>Add to my list</button>}
                 key={movie.title}
                 image ={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                 name = {movie.title}
@@ -55,7 +75,6 @@ if(movie === false){
                 duration={movie.runtime}
                 overview={movie.overview}
                 bg={movie.backdrop_path}
-
                 genre={movie.genres.map(genre => <li className='genre'>{genre.name}</li>)}
                 />
             </div>

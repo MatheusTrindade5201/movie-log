@@ -128,14 +128,14 @@ const Home = () => {
                          text={'Upcoming'} />
                 </div>
                 <div className='movies__section'>
-                    {movies.map(movie => <Card 
+                    {movies.map(movie => <NavLink to={`/movie/${movie.id}`} className='card'><Card 
                     id={movie.id}
                     key={movie.id}
                     image={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                     name={movie.title}
                     release={movie.release_date}
                     rating={movie.vote_average}
-                    />)}
+                    /></NavLink>)}
                 </div>
                 <div className='home__pagination'>
                     <Pagination 

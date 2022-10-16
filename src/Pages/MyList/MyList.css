@@ -1,0 +1,21 @@
+.list{
+    margin: 2rem 5vw;
+}
+
+.list__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.deleteMovie {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #f08a8a;
+    border: 1px solid #661010;
+    font-weight: 600;
+}
+
+.card__presentation{
+    position: relative;
+}

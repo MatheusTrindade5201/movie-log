@@ -5,6 +5,7 @@ import HomeLoged from "./Pages/HomeLoged";
 import Login from "./Pages/Login";
 import Movie from "./Pages/Movie";
 import MovieLoged from "./Pages/MovieLoged";
+import MyList from "./Pages/MyList";
 import Register from "./Pages/Register";
 
 const Router = () => {
@@ -18,6 +19,7 @@ const Router = () => {
                     <Route element={<MovieLoged />} path='movie/:id'/> 
                     <Route element={<Register />} path='/register'/>
                     <Route element={<Login />} path='/Login' />
+                    <Route element={<MyList/>} path='/my-list' />
                 </Routes>
             </BrowserRouter>
         )
