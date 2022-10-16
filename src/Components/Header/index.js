@@ -10,7 +10,7 @@ const Header = (props) => {
                 {props.myList}
                 {props.signOut}
             </div>
-            <p className='header__theme'>Dark Mode</p>
+            <p className='header__theme'></p>
         </header>
     )
 }
