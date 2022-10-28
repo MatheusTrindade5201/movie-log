@@ -10,7 +10,7 @@ Esse é um projeto desenvolvido com React.js e com Firebase para o serviço de a
 - [ ] Responsivo (Em desenvolvimento)
 
 
-  - Link do Site-solução: [Movie Log]([https://people-list-henna.vercel.app/Edit/1](http://movie-log-inky.vercel.app/)
+  - Link do Site-solução: [Movie Log](http://movie-log-inky.vercel.app/)
 
 ## Preview do produto final
 
